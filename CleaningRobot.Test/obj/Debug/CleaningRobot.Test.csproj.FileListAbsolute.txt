@@ -1,0 +1,16 @@
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\CleaningRobot.Test.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\CleaningRobot.Test.pdb
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\CleaningRobot.Core.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\CleaningRobot.Core.pdb
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\obj\Debug\CleaningRobot.Test.csprojAssemblyReference.cache
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\obj\Debug\CleaningRobot.Test.csproj.CoreCompileInputs.cache
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\obj\Debug\CleaningRobot.Test.csproj.CopyComplete
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\obj\Debug\CleaningRobot.Test.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Test\obj\Debug\CleaningRobot.Test.pdb

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleaningRobot", "CleaningRobot\CleaningRobot.csproj", "{701D46E1-1CB7-4226-A792-12E108E40433}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleaningRobot.Console", "CleaningRobot\CleaningRobot.Console.csproj", "{701D46E1-1CB7-4226-A792-12E108E40433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleaningRobot.Core", "CleaningRobot.Core\CleaningRobot.Core.csproj", "{4BBAA7F5-1F11-400B-86A5-6EEEE022E550}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleaningRobot.Test", "CleaningRobot.Test\CleaningRobot.Test.csproj", "{EDED577F-EAEF-431C-BF58-2DD9598DCC67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{701D46E1-1CB7-4226-A792-12E108E40433}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{701D46E1-1CB7-4226-A792-12E108E40433}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{701D46E1-1CB7-4226-A792-12E108E40433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BBAA7F5-1F11-400B-86A5-6EEEE022E550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BBAA7F5-1F11-400B-86A5-6EEEE022E550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BBAA7F5-1F11-400B-86A5-6EEEE022E550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BBAA7F5-1F11-400B-86A5-6EEEE022E550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDED577F-EAEF-431C-BF58-2DD9598DCC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDED577F-EAEF-431C-BF58-2DD9598DCC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDED577F-EAEF-431C-BF58-2DD9598DCC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDED577F-EAEF-431C-BF58-2DD9598DCC67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CleaningRobot.Core
 {
-    public class Class1
+    public class Robot
     {
     }
 }

@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CleaningRobot.Core\CleaningRobot.Core.csproj">
+      <Project>{4bbaa7f5-1f11-400b-86a5-6eeee022e550}</Project>
+      <Name>CleaningRobot.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

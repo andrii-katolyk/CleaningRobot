@@ -1,0 +1,6 @@
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Core\bin\Debug\CleaningRobot.Core.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Core\bin\Debug\CleaningRobot.Core.pdb
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Core\obj\Debug\CleaningRobot.Core.csprojAssemblyReference.cache
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Core\obj\Debug\CleaningRobot.Core.csproj.CoreCompileInputs.cache
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Core\obj\Debug\CleaningRobot.Core.dll
+C:\KatolykSolutions\CleaningRobot\CleaningRobot.Core\obj\Debug\CleaningRobot.Core.pdb
