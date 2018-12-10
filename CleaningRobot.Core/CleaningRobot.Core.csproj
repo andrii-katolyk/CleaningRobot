@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CleanOfficeCommand.cs" />
     <Compile Include="CommandManager.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="MovementCommand.cs" />
     <Compile Include="Robot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
