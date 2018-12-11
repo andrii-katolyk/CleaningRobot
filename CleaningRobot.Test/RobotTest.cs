@@ -64,5 +64,45 @@ namespace CleaningRobot.Test
 
 			Assert.AreEqual(20, placesCount);
 		}
+
+		[TestMethod]
+		public void CreateRobot_AddMaxCountOfCommands_CleanedPlacesCountIsCorrect()
+		{
+			CommandManager manager = new CommandManager();
+			manager.AddInputParameters("10000");
+			manager.AddInputParameters("-100000 0");
+
+			for(int i=0; i < 10000; i++)
+			{
+				manager.AddInputParameters("E 10");
+			}
+			
+			var reporter = new OfficeCleaningReporter();
+
+			var robot = new Robot(manager.CleanOfficeCommand, reporter);
+			robot.CleanOffice();
+
+			var placesCount = reporter.GetCleanedWorkingPlacesCount();
+
+			Assert.AreEqual(100001, placesCount);
+		}
+
+		[TestMethod]
+		public void CreateRobot_SendOutOfTheBounds_RobotIsNotMovingOutOfTheBounds()
+		{
+			CommandManager manager = new CommandManager();
+			manager.AddInputParameters("1");
+			manager.AddInputParameters("-99999 0");
+			manager.AddInputParameters("W 2");
+			
+			var reporter = new OfficeCleaningReporter();
+
+			var robot = new Robot(manager.CleanOfficeCommand, reporter);
+			robot.CleanOffice();
+
+			var placesCount = reporter.GetCleanedWorkingPlacesCount();
+
+			Assert.AreEqual(2, placesCount);
+		}
 	}
 }

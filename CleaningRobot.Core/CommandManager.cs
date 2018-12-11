@@ -5,7 +5,13 @@ namespace CleaningRobot.Core
 {
 	public class CommandManager
 	{
-		public bool IsCommandsSetComplete { get; set; }
+		public bool IsCommandsSetComplete
+		{
+			get
+			{
+				return _commandsCount == _inputedParametersCount - 2;
+			}
+		}
 
 		public CleanOfficeCommand CleanOfficeCommand { get; private set; }
 
@@ -22,49 +28,56 @@ namespace CleaningRobot.Core
 		
 		public void AddInputParameters(string parameter)
 		{
-			if(_inputedParametersCount == 0)
+			if (!IsCommandsSetComplete)
 			{
-				_commandsCount = Convert.ToInt32(parameter);
-				IsCommandsSetComplete =
-					_commandsCount == 0;
-			}
-			else if(_inputedParametersCount == 1)
-			{
-				var inputPosition = parameter.Split(' ');
-				var startPosition = new Position
+				if (_inputedParametersCount == 0)
 				{
-					X = Convert.ToInt32(inputPosition[0]),
-					Y = Convert.ToInt32(inputPosition[1])
-				};
-				CleanOfficeCommand.StartPosition = startPosition;
-			}
-			else
-			{
-				if(_commandsCount != 0 && !IsCommandsSetComplete)
-				{
-					var inputCommand = parameter.Split(' ');
-
-					var movementCommand = new MovementCommand
-					{
-						Direction = GetDirection(inputCommand[0]),
-						StepsCount = Convert.ToInt32(inputCommand[1])
-					};
-
-					CleanOfficeCommand.MovementCommands.Add(movementCommand);
-
-					IsCommandsSetComplete = 
-						CleanOfficeCommand.MovementCommands.Count == _commandsCount;
+					_commandsCount = Convert.ToInt32(parameter);
 				}
-			}
+				else if (_inputedParametersCount == 1)
+				{
+					InitStartPosition(parameter);
+				}
+				else
+				{
+					AddMovementCommand(parameter);
+				}
 
-			_inputedParametersCount++;
+				_inputedParametersCount++;
+			}
+		}
+
+		private void AddMovementCommand(string movementCommandParameter)
+		{
+			var inputCommand = movementCommandParameter.Split(' ');
+
+			var movementCommand = new MovementCommand
+			{
+				Direction = GetDirection(inputCommand[0]),
+				StepsCount = Convert.ToInt32(inputCommand[1])
+			};
+
+			CleanOfficeCommand.MovementCommands.Add(movementCommand);
+		}
+
+		private void InitStartPosition(string positionParameter)
+		{
+			var inputPosition = positionParameter.Split(' ');
+
+			var startPosition = new Position
+			{
+				X = Convert.ToInt32(inputPosition[0]),
+				Y = Convert.ToInt32(inputPosition[1])
+			};
+
+			CleanOfficeCommand.StartPosition = startPosition;
 		}
 
 		private Direction GetDirection(string directionCode)
 		{
 			var direction = Direction.Default;
 
-			switch(directionCode)
+			switch(directionCode.ToUpper())
 			{
 				case "E":
 					direction = Direction.East;

@@ -41,16 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CleanOfficeCommand.cs" />
+    <Compile Include="DomainModels\CleanOfficeCommand.cs" />
     <Compile Include="CommandManager.cs" />
-    <Compile Include="DataRestrictions.cs" />
-    <Compile Include="Direction.cs" />
-    <Compile Include="IReporter.cs" />
-    <Compile Include="OfficeCleaningReporter.cs" />
-    <Compile Include="Position.cs" />
-    <Compile Include="MovementCommand.cs" />
+    <Compile Include="DomainValues\DataRestrictions.cs" />
+    <Compile Include="DomainValues\Direction.cs" />
+    <Compile Include="Reporting\IReporter.cs" />
+    <Compile Include="Reporting\OfficeCleaningReporter.cs" />
+    <Compile Include="DomainModels\Position.cs" />
+    <Compile Include="DomainModels\MovementCommand.cs" />
     <Compile Include="Robot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,5 +10,8 @@
 
 		public static readonly int YMinValue = -100000;
 		public static readonly int YMaxValue = 100000;
+
+		public static readonly int MinStepsCount = 1;
+		public static readonly int MaxStepsCount = 99000;
 	}
 }

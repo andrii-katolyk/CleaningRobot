@@ -1,4 +1,6 @@
-﻿namespace CleaningRobot.Core
+﻿using System.Linq;
+
+namespace CleaningRobot.Core
 {
 	public class Robot
 	{
@@ -16,9 +18,9 @@
 
 		public void CleanOffice()
 		{
-			if(_reporter != null)
+			if (_cleanOfficeCommand.MovementCommands.Any())
 			{
-				_reporter.LogRobotPosition(CurrentPosition);
+				_reporter?.LogRobotPosition(CurrentPosition);
 			}
 
 			foreach(var movementCommand in _cleanOfficeCommand.MovementCommands)

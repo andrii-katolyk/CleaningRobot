@@ -51,7 +51,7 @@ namespace CleaningRobot.Test
 			manager.AddInputParameters("10000");
 			manager.AddInputParameters("10 22");
 
-			for (var i = 0; i <= 10000; i++)
+			for (var i = 0; i < 10000; i++)
 			{
 				manager.AddInputParameters("N 1");
 			}

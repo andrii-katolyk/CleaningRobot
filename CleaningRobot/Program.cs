@@ -17,8 +17,6 @@ namespace CleaningRobot
 				commandManager.AddInputParameters(Console.ReadLine());
 			}
 
-			Console.WriteLine("Robot starts cleaning the Office...");
-
 			var reporter = new OfficeCleaningReporter();
 
 			var robot = new Robot(commandManager.CleanOfficeCommand, reporter);
