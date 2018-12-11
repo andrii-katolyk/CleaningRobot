@@ -5,7 +5,7 @@ namespace CleaningRobot.Core
 	public class OfficeCleaningReporter : IReporter
 	{
 		private HashSet<Position> _cleanedWorkingPlaces { get; set; }
-
+		
 		public OfficeCleaningReporter()
 		{
 			_cleanedWorkingPlaces = new HashSet<Position>();
@@ -14,6 +14,11 @@ namespace CleaningRobot.Core
 		public string GetReport()
 		{
 			return $"=> Cleaned: {_cleanedWorkingPlaces.Count}";
+		}
+
+		public int GetCleanedWorkingPlacesCount()
+		{
+			return _cleanedWorkingPlaces.Count;
 		}
 
 		public void LogRobotPosition(Position workingPlace)

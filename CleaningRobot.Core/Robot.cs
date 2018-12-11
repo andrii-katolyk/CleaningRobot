@@ -2,28 +2,31 @@
 {
 	public class Robot
 	{
+		public Position CurrentPosition { get; private set; }
+
 		private CleanOfficeCommand _cleanOfficeCommand { get; set; }
 		private IReporter _reporter { get; set; }
-		private Position _currentPosition { get; set; }
-
+		
 		public Robot(CleanOfficeCommand cleanOfficeCommand, IReporter reporter)
 		{
 			_cleanOfficeCommand = cleanOfficeCommand;
 			_reporter = reporter;
-			_currentPosition = cleanOfficeCommand.StartPosition;
+			CurrentPosition = cleanOfficeCommand.StartPosition;
 		}
 
 		public void CleanOffice()
 		{
 			if(_reporter != null)
 			{
-				_reporter.LogRobotPosition(_currentPosition);
+				_reporter.LogRobotPosition(CurrentPosition);
 			}
 
 			foreach(var movementCommand in _cleanOfficeCommand.MovementCommands)
 			{
-				MoveToNextPlace(movementCommand);
-				_reporter.LogRobotPosition(_currentPosition);
+				for (int step = 0; step < movementCommand.StepsCount; step++)
+				{
+					CleanNextPlace(movementCommand.Direction);
+				}
 			}
 		}
 
@@ -39,23 +42,24 @@
 			return report;
 		}
 
-		private void MoveToNextPlace(MovementCommand movement)
+		private void CleanNextPlace(Direction direction)
 		{
-			switch (movement.Direction)
+			switch (direction)
 			{
 				case Direction.East:
-					_currentPosition.X += movement.StepsCount;
+					CurrentPosition = new Position { X = CurrentPosition.X + 1, Y = CurrentPosition.Y };
 					break;
 				case Direction.West:
-					_currentPosition.X -= movement.StepsCount;
+					CurrentPosition = new Position { X = CurrentPosition.X - 1, Y = CurrentPosition.Y };
 					break;
 				case Direction.South:
-					_currentPosition.Y -= movement.StepsCount;
+					CurrentPosition = new Position { X = CurrentPosition.X, Y = CurrentPosition.Y - 1 };
 					break;
 				case Direction.North:
-					_currentPosition.Y += movement.StepsCount;
+					CurrentPosition = new Position { X = CurrentPosition.X, Y = CurrentPosition.Y + 1};
 					break;
 			}
+			_reporter?.LogRobotPosition(CurrentPosition);
 		}
 	}
 }

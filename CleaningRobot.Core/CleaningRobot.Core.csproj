@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CleanOfficeCommand.cs" />
     <Compile Include="CommandManager.cs" />
+    <Compile Include="DataRestrictions.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="IReporter.cs" />
     <Compile Include="OfficeCleaningReporter.cs" />
