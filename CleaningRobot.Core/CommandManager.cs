@@ -7,9 +7,18 @@ namespace CleaningRobot.Core
 	{
 		public bool IsCommandsSetComplete { get; set; }
 
+		public CleanOfficeCommand CleanOfficeCommand { get; private set; }
+
 		private int _inputedParametersCount { get; set; }
 		private int _commandsCount { get; set; }
-		private CleanOfficeCommand _cleanOfficeCommand { get; set; }
+		
+		public CommandManager()
+		{
+			CleanOfficeCommand = new CleanOfficeCommand
+			{
+				MovementCommands = new List<MovementCommand>()
+			};
+		}
 		
 		public void AddInputParameters(string parameter)
 		{
@@ -27,14 +36,11 @@ namespace CleaningRobot.Core
 					X = Convert.ToInt32(inputPosition[0]),
 					Y = Convert.ToInt32(inputPosition[1])
 				};
-				_cleanOfficeCommand = new CleanOfficeCommand
-				{
-					StartPosition = startPosition
-				};
+				CleanOfficeCommand.StartPosition = startPosition;
 			}
 			else
 			{
-				if(_cleanOfficeCommand != null)
+				if(_commandsCount != 0 && !IsCommandsSetComplete)
 				{
 					var inputCommand = parameter.Split(' ');
 
@@ -44,15 +50,10 @@ namespace CleaningRobot.Core
 						StepsCount = Convert.ToInt32(inputCommand[1])
 					};
 
-					if(_cleanOfficeCommand.MovementCommands == null)
-					{
-						_cleanOfficeCommand.MovementCommands = new List<MovementCommand>();
-					}
+					CleanOfficeCommand.MovementCommands.Add(movementCommand);
 
-					_cleanOfficeCommand.MovementCommands.Add(movementCommand);
-
-					IsCommandsSetComplete = _commandsCount == 0 ||
-						_cleanOfficeCommand.MovementCommands.Count >= _commandsCount;
+					IsCommandsSetComplete = 
+						CleanOfficeCommand.MovementCommands.Count == _commandsCount;
 				}
 			}
 
@@ -80,11 +81,6 @@ namespace CleaningRobot.Core
 			}
 
 			return direction;
-		}
-
-		public CleanOfficeCommand GetCleanOfficeCommand()
-		{
-			return _cleanOfficeCommand;
 		}
 	}
 }
