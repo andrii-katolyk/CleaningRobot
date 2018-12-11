@@ -45,7 +45,7 @@
     <Compile Include="CommandManager.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="IReporter.cs" />
-    <Compile Include="OfficeCleaningReport.cs" />
+    <Compile Include="OfficeCleaningReporter.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="MovementCommand.cs" />
     <Compile Include="Robot.cs" />
